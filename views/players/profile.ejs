@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body>
+        <h1>Welcome <%=player.name%> </h1>
+        <div class="content">
+        <form action="/players/profile/<%=player.id%>?_method=PUT" method="POST">
+            Name: <input type="text" name="name" value='<%=player.name%>'/></br>
+            Username: <input type="text" name="username" value='<%=player.username%>'/></br>
+            Password: <input type="text" name="password" value='<%=player.password%>'/></br>
+            <label for='team-select'>Team:</label>
+            <select name='teamId' id='team-select'>
+                <% for(let i = 0; i< teams.length; i++){ %>
+                    <% if(teams[i].name===player.Team.name){ %>
+                        <option selected='selected' value='<%=teams[i].id%>'><%=teams[i].name%></option>
+                    <% }else { %>
+                        <option value='<%=teams[i].id%>'><%=teams[i].name%></option>
+                   <% } %>
+                <% } %> 
+            </select>
+            <input type="submit" name="" value="Edit Profile"/></br>
+            <label for='add-pokemon'>Add Pokemon:</label>
+            <select name='pokemon' id='add-pokemon'>
+                <% for (let i=0; i < pokemon.length; i++) { %>
+                    <option value="<%=pokemon[i].id%>"><%=pokemon[i].name%></option>
+                <% } %>
+            </select>
+            <input type="submit" name="" value="Add Pokemon"/>
+        </form>
+        </div>
+        <form action='/players/profile/<%=player.id%>?_method=DELETE' method='POST'>
+            <input type='submit'  value="DELETE"/>
+        </form>
+        <h4>Pokemon Caught:</h4>
+        <ul>
+        <% for (let i=0; i<player.Pokemons.length; i++){ %>
+            <li>
+                <%=player.Pokemons[i].name%>
+            </li>
+        <% } %>
+        </ul>
+        <a href='/pokemon'>View All Pokemon</a>
+    </body>
+</html>

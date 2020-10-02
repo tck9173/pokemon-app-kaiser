@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body>
+        <h1>Teams</h1>
+        <div class = "content">
+            <ul class = 'teamsList'>
+                <% for (let i=0;i<team.length; i++){ %>
+                    <li class = "teamItem">
+                        <%=team[i].name%>
+                        <ul>
+                            <li>
+                                <% for (let j=0;j<player.length; j++){ %>
+                                    <% if (team[i].id === player[j].teamId) { %>
+                                        <%=player[j].name%></br>
+                                    <% } %>
+                                <% } %> 
+                            </li>
+                        </ul>
+                    </li>
+                <% } %>
+            </ul>   
+        </div>
+        <nav>
+            <a href="/pokemon/">Main Page</a></br>
+            <a href='/players/'>Log Out of Pokedex</a>
+        </nav>
+    </body>
+</html> 

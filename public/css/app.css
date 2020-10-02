@@ -1,0 +1,85 @@
+body{
+    background: gray;
+    background-image: url("https://wallpapercave.com/wp/wp3170170.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    margin: 20px 0 0 50px;
+    text-align: left;
+}
+
+a {
+    color: white; 
+    margin: 5px;
+}
+
+img {
+    background: white;
+}
+
+ul {
+    font-size: 18px;
+    list-style: none;
+}
+
+.pokedexList {
+    width: 100px;
+    height: 100px;
+}
+
+.fullsize {
+    border-radius: 25px;
+    border: solid lightgrey 20px;
+}
+
+input {
+    background: white;
+    border-radius: 4px;
+    border: 2px solid black;
+    color: black
+}
+
+.content {
+    margin-top: 40px;
+}
+
+.pokemon {
+    display: flex;
+    flex-flow: row wrap;
+    margin:0 100px;
+}
+
+.thumbnail {
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
+}
+
+.pokemonShow {
+    display: flex;
+    justify-content: center;
+}
+
+.caughtBy {
+    margin-left: 20px;
+}
+
+.teamsList {
+    display: flex;
+    justify-content: center;
+}
+
+.teamItem {
+    padding: 5px;
+    border: solid black 2px;
+    border-radius: 5px;
+    margin: 5px;
+    width: 100px;
+}

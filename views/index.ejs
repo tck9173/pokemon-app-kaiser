@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body>
+        <h1>Pokemon</h1>
+        <div class = "content">
+        <ul class = 'pokemon'>
+            <% for(let i = 0; i < pokemon.length; i++){ %>
+                <li class='pokedexList'>
+                    <img class='thumbnail' src= '<%= pokemon[i].img%>'></br>
+                    <a href='/pokemon/<%=pokemon[i].id%>'><%=pokemon[i].name%></a>
+		        </li>
+            <% } %>
+        </ul>
+        <nav>
+            <a href='/pokemon/new'>Log New Pokemon</a>
+            <a href='/teams/'>View Teams</a>
+            <a href='/players/'>Log Out of Pokedex</a>
+        </nav>
+       </div>
+    </body>
+</html> 
